@@ -54,5 +54,29 @@ pip install fastapi uvicorn
 ##### 4. Run the FastAPI application:
 
 ```bash
-python main.py
+python main.py --port <port_number>
 ```
+
+Where `<port_number>` is an integer representing the port on which the application will run. For example, to start the application on port 8080, execute the command:
+
+```bash
+python your_script_name.py --port 8080
+```
+
+If the `--port` parameter is not specified, the application will default to running on port 8000.
+
+Once the application is running, you can open your browser and navigate to the following address:
+
+- For port 8000:
+  - http://localhost:8000
+  - http://127.0.0.1:8000
+
+If you specified a different port, for example, 8080, you would use:
+
+- http://localhost:8080
+- http://127.0.0.1:8080
+
+**Note:**
+`localhost` and `127.0.0.1` are synonyms that refer to your local computer. You can use either of these addresses to access your application.
+
+This instruction will help users of your application understand how to run it and which addresses to use in the browser.
