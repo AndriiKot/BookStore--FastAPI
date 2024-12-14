@@ -2,8 +2,10 @@
 import uvicorn
 import os
 import argparse
+import json
 
-app = FastAPI()
+path_version = "../version.json"
+
 
 books = [
     {
@@ -20,9 +22,26 @@ books = [
     }
 ]
 
+def load_version():
+    with open(path_version) as f:
+        return json.load(f)["version"]
+
+app = FastAPI(
+    title="Ваше Приложение",
+    version=load_version()  # Загружаем версию из файла
+)
+
+
 @app.get("/books")
 async def get_books():
     return books
+
+@app.get("/books/{book_id}")
+async def get_book(book_id: int):
+    for book in books:
+        if book["id"] == book_id:
+            return book
+    return {"error": "Book not found"}
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the FastAPI app.")
