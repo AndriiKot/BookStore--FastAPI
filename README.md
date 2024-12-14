@@ -1,7 +1,7 @@
 # FastAPI
 ## Simple Application (REAST API)
 ### Bookstore
-#### Technologies
+#### Technologies:
 <table>
   <thead>
     <tr>
