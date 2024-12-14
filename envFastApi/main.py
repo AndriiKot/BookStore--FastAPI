@@ -1,4 +1,4 @@
-﻿from fastapi import FastAPI
+﻿from fastapi import FastAPI, HTTPException
 import uvicorn
 import os
 import argparse
@@ -27,8 +27,9 @@ def load_version():
         return json.load(f)["version"]
 
 app = FastAPI(
-    title="Ваше Приложение",
-    version=load_version()  # Загружаем версию из файла
+    title="Bookstore",
+    description="Simple REST API for a bookstore",
+    version=load_version()
 )
 
 
@@ -41,7 +42,7 @@ async def get_book(book_id: int):
     for book in books:
         if book["id"] == book_id:
             return book
-    return {"error": "Book not found"}
+    raise HTTPException(status_code=404, detail="Book not found")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the FastAPI app.")
