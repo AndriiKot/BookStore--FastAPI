@@ -24,3 +24,25 @@
     </tr>
   </tbody>
 </table>
+
+####Installation
+- 1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/yourusername/your-repo-name.git
+   cd your-repo-name
+   ```
+-2 Create a virtual environment (optional but recommended):
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+- 3. Install the required packages using pip(or other package manager):
+pip install fastapi uvicorn
+Running the Application
+To run the FastAPI application, execute the following command:
+
+- 4. Run the FastAPI application:
+```bash
+python main.py
+```
+
