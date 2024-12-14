@@ -33,11 +33,19 @@ app = FastAPI(
 )
 
 
-@app.get("/books")
+@app.get(
+    path="/books",
+    tags=["Books 📚" ],
+    summary="Get all books",
+)
 async def get_books():
     return books
 
-@app.get("/books/{book_id}")
+@app.get(
+    path="/books/{book_id}",
+    tags=["Books 📚"],
+    summary="Get a book by ID",
+)
 async def get_book(book_id: int):
     for book in books:
         if book["id"] == book_id:
