@@ -5,22 +5,11 @@ import argparse
 import json
 
 path_version = "../version.json"
+path_books = "./data/books.json"
 
-
-books = [
-    {
-        "id": 1,
-        "title": "Python Programming",
-        "author": "John Doe",
-        "price": 19.99
-    },
-    {
-        "id": 2,
-        "title": "FastAPI",
-        "author": "John Doe",
-        "price": 29.99
-    }
-]
+def load_books():
+    with open(path_books, 'r') as file:
+        return json.load(file)
 
 def load_version():
     with open(path_version) as f:
@@ -39,6 +28,7 @@ app = FastAPI(
     summary="Get all books",
 )
 async def get_books():
+    books = load_books()
     return books
 
 @app.get(
@@ -47,6 +37,7 @@ async def get_books():
     summary="Get a book by ID",
 )
 async def get_book(book_id: int):
+    books = load_books()
     for book in books:
         if book["id"] == book_id:
             return book
