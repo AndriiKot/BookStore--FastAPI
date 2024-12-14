@@ -16,8 +16,6 @@
           <img src=https://github.com/AndriiKot/BookStore--FastAPI/blob/main/icons/fastapi.svg alt=FastAPI>
         </a>
       </td>
-    </tr>
-    <tr>
       <td height=100 width=100>
         <a href=https://www.python.org/>
           <img src=https://github.com/AndriiKot/___Icons__and__Links___/blob/main/icons/python.svg alt=Python>
