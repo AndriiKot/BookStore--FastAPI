@@ -3,12 +3,12 @@ import os
 import argparse
 from fastapi import FastAPI
 from routers.books import router as books_router
-# from utils.load_version import load_version
+from utils.load_version import load_version
 
 app = FastAPI(
     title="Bookstore",
     description="Simple REST API for a bookstore",
-    # version=load_version()
+    version=load_version(),
 )
 
 app.include_router(books_router)
