@@ -1,47 +1,17 @@
-﻿from fastapi import FastAPI, HTTPException
-import uvicorn
+﻿import uvicorn
 import os
 import argparse
-import json
-
-path_version = "../version.json"
-path_books = "./data/books.json"
-
-def load_books():
-    with open(path_books, 'r') as file:
-        return json.load(file)
-
-def load_version():
-    with open(path_version) as f:
-        return json.load(f)["version"]
+from fastapi import FastAPI
+from routers.books import router as books_router
+# from utils.load_version import load_version
 
 app = FastAPI(
     title="Bookstore",
     description="Simple REST API for a bookstore",
-    version=load_version()
+    # version=load_version()
 )
 
-
-@app.get(
-    path="/books",
-    tags=["Books 📚" ],
-    summary="Get all books",
-)
-async def get_books():
-    books = load_books()
-    return books
-
-@app.get(
-    path="/books/{book_id}",
-    tags=["Books 📚"],
-    summary="Get a book by ID",
-)
-async def get_book(book_id: int):
-    books = load_books()
-    for book in books:
-        if book["id"] == book_id:
-            return book
-    raise HTTPException(status_code=404, detail="Book not found")
+app.include_router(books_router)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the FastAPI app.")
