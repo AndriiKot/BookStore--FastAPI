@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "title": "Python Programming",
+        "author": "John Doe",
+        "price": 19.99
+    },
+    {
+        "id": 2,
+        "title": "FastAPI",
+        "author": "John Doe",
+        "price": 29.99
+    }
+]
+

@@ -1,7 +1,1 @@
 !icons/*.svg
-!data/**.*
-!models/**.*
-!routers
-!utils
-!config.json
-
