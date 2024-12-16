@@ -28,7 +28,7 @@
       </td>
       <td height=100 width=100>
         <a href=https://docs.pydantic.dev/latest/>
-          <img src=https://github.com/AndriiKot/BookStore--FastAPI/blob/main/icons/pydantic.svg alt=Pydantic>
+          <img src=https://github.com/AndriiKot/Bookstore--FastAPI/blob/main/icons/pydantic.svg alt=Pydantic>
         </a>
       </td>
     </tr>
